@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<bean id="customer" class="com.fynamix.beans.Customer"></bean>
+	<bean id="beneficiary" class="com.fynamix.beans.Beneficiary"></bean>
+	<bean id="transaction" class="com.fynamix.beans.Transaction"></bean>
+	<bean id="cibil" class="com.fynamix.beans.Cibil"></bean>
+	<bean id="as" class="com.fynamix.beans.TryAsync"></bean>
+	<bean id="ta" class="com.fynamix.beans.TransferAsync"></bean>
+	
+	<context:component-scan base-package="com.fynamix.beans,com.fynamix.model"></context:component-scan>
+	<context:annotation-config ></context:annotation-config>
+
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+	</bean>
+	<context:property-placeholder
+		location="classpath:com/fynamix/main/jdbc.properties" />
+
+	<bean id="account" class="com.fynamix.model.Account"></bean>
+
+
+	
+	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+</beans>
