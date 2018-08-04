@@ -10,8 +10,9 @@
 <body>
 <c:import url="customer_header.jsp"></c:import>
 <h3>Loan Procedure</h3>
-Status:<c:out value="${cibil.status}"></c:out> 
-Score:<c:out value="${cibil.score}"></c:out>
+<b>Status:<c:out value="${cibil.status}"></c:out></b>
+<hr> 
+<b>Score:<c:out value="${cibil.score}"></c:out></b>
 <div class="space"></div>
 <c:import url="footer.jsp"></c:import>
 </body>

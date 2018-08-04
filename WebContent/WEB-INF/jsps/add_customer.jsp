@@ -8,16 +8,63 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Enter customer details</h1>
+<c:import url="admin_header.jsp"></c:import>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Enter Customer Details</h3>
+
 <c:out value="${msg }"></c:out>
-<form action="${pageContext.request.contextPath }/add-customer-form" method="POST">
-<table>
-<tr><td>AccountID:</td><td><input type='text' name='id' value=''></td></tr>
-<tr><td>UserID:</td><td><input type='text' name='uid' value=''></td></tr>
-<tr><td>Balance:</td><td><input type='text' name='balance' value=''></td></tr>
-<tr><td>Password:</td><td><input type='password' name='password'/></td></tr>
-	<tr><td colspan='2'><input name="submit" type="submit" value="Add customer"/></td></tr>	
-</table>
+<form class="form-horizontal" action="${pageContext.request.contextPath }/add-customer-form" method="POST">
+<div class="form-group">
+                            <label class="control-label col-sm-2" for="id_username">
+                                AccountID:
+                            </label>
+                            <div class="col-sm-10">
+                               <input type='text' name='id' value=''> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="id_username">
+                                UserID:
+                            </label>
+                            <div class="col-sm-10">
+                               <input type='text' name='uid' value=''> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="id_username">
+                                Balance:
+                            </label>
+                            <div class="col-sm-10">
+                               <input type='text' name='balance' value=''> 
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="id_password">
+                                Password:
+                            </label>
+                            <div class="col-sm-10">
+                                <input type='password' name='password'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Add Customer</button>
+                            </div>
+                        </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="space"></div>
+<c:import url="footer.jsp"></c:import>
 </body>
 </html>
+						
